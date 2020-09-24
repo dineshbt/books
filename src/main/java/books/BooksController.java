@@ -14,6 +14,7 @@ public class BooksController {
 
 	@GetMapping("/books")
 	public Book[] books() {
+		System.out.println(" ########### Returning all the books ########### size " +books.length);
 		return books;
 	}
 
@@ -21,6 +22,7 @@ public class BooksController {
 	public Book book(@PathVariable int id) {
 		for (Book book : books) {
 			if (book.getId() == id) {
+				System.out.println(" @@@@@@@@@@@@@@@@@@ returning book = "+book.getName());
 				return book;
 			}
 
